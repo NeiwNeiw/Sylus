@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>浮生徹語 · 靈魂相契</title>
+
+  <!-- Zen Kurenaido (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Invitation Gate -->
+  <div class="inviteGate" id="inviteGate" aria-label="Invitation gate">
+    <div class="doors" aria-hidden="true">
+      <div class="door left"></div>
+      <div class="door right"></div>
+    </div>
+
+    <div class="envelope" aria-hidden="true">
+      <div class="env-back"></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="env-shadow"></div>
+    </div>
+
+    <div class="card" role="dialog" aria-modal="true" aria-label="Invitation">
+      <div class="kicker">YOU ARE INVITED</div>
+      <h1>紅黑之夜</h1>
+      <p class="sub">點擊封蠟，打開邀請函</p>
+
+      <div class="meta" aria-label="Event meta">
+        <div><b>DATE</b><span>04 / 18</span></div>
+        <div><b>LOCATION</b><span>高雄市苓雅區青年二路238號</span></div>
+      </div>
+
+      <!-- Seal (image/invite.png) -->
+      <button class="seal" id="openInvite" type="button" aria-label="Open invitation">
+        <img class="seal-img" src="image/invite.png" alt="封蠟" decoding="async" />
+      </button>
+    </div>
+  </div>
+
+  <!-- Header / Navigation (fixed) -->
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <b>浮生徹語</b>
+          <small>靈魂相契</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="#portfolio">作品集</a>
+        <a href="#about">關於</a>
+        <a href="#map" class="nav-cta">地圖 / 交通</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-kicker">YOU ARE INVITED</p>
+      <h1 class="hero-title">浮生徹語<br><span>至心樓處</span></h1>
+      <p class="hero-sub">我為你的誕生，賜與祝福。</p>
+      <div class="hero-actions">
+        <a class="btn" href="#portfolio">查看作品集</a>
+        <a class="btn btn-ghost" href="#map">查看地圖</a>
+      </div>
+      <div class="hero-meta">
+        <div class="metaBox"><b>DATE</b><span>04/18</span></div>
+        <div class="metaBox"><b>LOCATION</b><span>高雄市苓雅區青年二路238號</span></div>
+        <div class="metaBox"><b>DRESS CODE</b><span>Red · Black · Elegant</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Portfolio (click to enlarge + one-line note) -->
+    <section class="section" id="portfolio">
+      <div class="section-head">
+        <div>
+          <h2>作品集</h2>
+          <p>點擊圖片可放大查看；每張圖旁保留一行小字（可改成你的描述）。</p>
+        </div>
+      </div>
+
+      <div class="masonry" id="masonry">
+        <!-- 你可以把 src 換成自己的圖：image/p01.jpg ... -->
+        <figure class="shot shot-lg">
+          <button class="shotBtn" type="button" data-full="image/p01.jpg" data-note="同步透露 · 驚喜燈箱應援">
+            <img src="image/p01.jpg" alt="作品 01" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">同步透露 · 驚喜燈箱應援</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="shotBtn" type="button" data-full="image/p02.jpg" data-note="主視覺海報 · 紅黑酒窖氛圍">
+            <img src="image/p02.jpg" alt="作品 02" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">主視覺海報 · 紅黑酒窖氛圍</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="shotBtn" type="button" data-full="image/p03.jpg" data-note="社群貼文 · 版本節奏排版">
+            <img src="image/p03.jpg" alt="作品 03" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">社群貼文 · 版本節奏排版</span></figcaption>
+        </figure>
+
+        <figure class="shot shot-tall">
+          <button class="shotBtn" type="button" data-full="image/p04.jpg" data-note="立式構圖 · 儀式感字排">
+            <img src="image/p04.jpg" alt="作品 04" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">立式構圖 · 儀式感字排</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="shotBtn" type="button" data-full="image/p05.jpg" data-note="邀請卡內頁 · 低飽和暖光">
+            <img src="image/p05.jpg" alt="作品 05" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">邀請卡內頁 · 低飽和暖光</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="shotBtn" type="button" data-full="image/p06.jpg" data-note="票券 / DM · 版面留白">
+            <img src="image/p06.jpg" alt="作品 06" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">票券 / DM · 版面留白</span></figcaption>
+        </figure>
+
+        <figure class="shot shot-wide">
+          <button class="shotBtn" type="button" data-full="image/p07.jpg" data-note="長幅視覺 · 敘事式拼貼">
+            <img src="image/p07.jpg" alt="作品 07" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">長幅視覺 · 敘事式拼貼</span></figcaption>
+        </figure>
+
+        <figure class="shot">
+          <button class="shotBtn" type="button" data-full="image/p08.jpg" data-note="特寫圖 · 光點與陰影">
+            <img src="image/p08.jpg" alt="作品 08" loading="lazy" />
+          </button>
+          <figcaption class="cap"><span class="note">特寫圖 · 光點與陰影</span></figcaption>
+        </figure>
+      </div>
+
+      <p class="hint">把作品圖放在 <code>image/p01.jpg ~ p08.jpg</code>（可自行增減）。</p>
+    </section>
+
+    <!-- Parallax band (kept minimal) -->
+    <section class="parallax-band" aria-label="Parallax Story">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="content">
+        <h3>像翻開一封信</h3>
+        <p>先被遞上邀請函，點封蠟打開，再進入主視覺與作品集。</p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section-head">
+        <div>
+          <h2>關於</h2>
+          <p>保留簡潔敘事、紅黑氛圍，方便你換文案與圖片。</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h3>一句話</h3>
+          <p class="muted">把你們的故事，用紅與黑的光影，封存在這封邀請函裡。</p>
+        </div>
+        <div class="panel">
+          <h3>重點資訊</h3>
+          <ul>
+            <li><b>日期</b>：04/18</li>
+            <li><b>地點</b>：高雄市苓雅區青年二路238號</li>
+            <li><b>備註</b>：＿＿＿＿</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>字體大小控制</h3>
+          <p class="muted">想全站放大/縮小：到 <code>styles_min.css</code> 找 <code>/* FONT SIZE CONTROL */</code> 直接調整。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map / Location (keep space for Google Map embed + IG link) -->
+    <section class="section section-dark" id="map">
+      <div class="section-head">
+        <div>
+          <h2>地圖 / 交通</h2>
+          <p>保留 Google Map 嵌入空間＋IG 連結。</p>
+        </div>
+      </div>
+
+      <div class="map-grid">
+        <div class="panel">
+          <h3>場地資訊</h3>
+          <ul>
+            <li><b>日期</b>：04/18</li>
+            <li><b>地點</b>：高雄市苓雅區青年二路238號</li>
+            <li><b>停車</b>：＿＿＿＿</li>
+            <li><b>大眾運輸</b>：＿＿＿＿</li>
+          </ul>
+        </div>
+
+        <div class="map-embed" aria-label="Google Map Embed">
+          <!--
+            直接貼上 Google Map iframe：
+            <iframe src="https://www.google.com/maps/embed?..." loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          -->
+        </div>
+      </div>
+
+      <div class="ig-row" aria-label="Instagram">
+        <a class="ig-link" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Open Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9A3.5 3.5 0 0 0 20 16.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm10 2.2a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Side countdown badge -->
+  <a class="countdown-badge" id="countdownBadge" href="#top" aria-label="Countdown to event">
+    <span class="cd-num" id="cdNum">--</span>
+    <span class="cd-label">DAYS</span>
+    <span class="cd-date">04/18</span>
+  </a>
+
+  <!-- Lightbox (portfolio) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="1"></div>
+    <div class="lightbox-card" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox-close" type="button" data-close="1" aria-label="Close">✕</button>
+      <img class="lightbox-img" id="lightboxImg" alt="" />
+      <p class="lightbox-note" id="lightboxNote"></p>
+    </div>
+  </div>
+
+  <script>
+    // --- Invitation gate ---
+    const gate = document.getElementById('inviteGate');
+    const openInvite = document.getElementById('openInvite');
+
+    function lockScroll(lock){
+      document.documentElement.style.overflow = lock ? 'hidden' : '';
+      document.body.style.overflow = lock ? 'hidden' : '';
+    }
+
+    lockScroll(true);
+    requestAnimationFrame(()=> gate && gate.classList.add('present'));
+
+    function openGate(){
+      document.body.classList.add('gate-opened');
+      lockScroll(false);
+      setTimeout(()=>{ if(gate) gate.style.display = 'none'; }, 1100);
+    }
+
+    openInvite?.addEventListener('click', openGate);
+    gate?.addEventListener('click', (e)=>{ if(e.target === gate) openGate(); });
+
+    // --- Fixed header offset ---
+    const headerEl = document.querySelector('.site-header');
+    function updateHeaderOffset(){
+      if(!headerEl) return;
+      const h = Math.ceil(headerEl.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+    }
+    updateHeaderOffset();
+    window.addEventListener('resize', ()=>requestAnimationFrame(updateHeaderOffset), {passive:true});
+
+    // --- Mobile nav ---
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    function setNav(open){
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    navToggle?.addEventListener('click', ()=> setNav(!nav.classList.contains('open')));
+    nav?.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> setNav(false)));
+
+    // --- Parallax ---
+    function updateParallax(){
+      const y = window.scrollY || 0;
+      document.documentElement.style.setProperty('--parY', y + 'px');
+    }
+    updateParallax();
+    window.addEventListener('scroll', ()=>requestAnimationFrame(updateParallax), {passive:true});
+
+    // --- Countdown (Event: 4/18) ---
+    const cdNumEl = document.getElementById('cdNum');
+    const EVENT_MONTH = 4;
+    const EVENT_DAY = 18;
+
+    function getNextEventDate(){
+      const now = new Date();
+      let y = now.getFullYear();
+      let target = new Date(y, EVENT_MONTH-1, EVENT_DAY, 0,0,0,0);
+      if(target.getTime() < now.getTime() - 1000*60*60*24) target = new Date(y+1, EVENT_MONTH-1, EVENT_DAY, 0,0,0,0);
+      return target;
+    }
+
+    function updateCountdown(){
+      const now = new Date();
+      const target = getNextEventDate();
+      const diff = target.getTime() - now.getTime();
+      const days = Math.max(0, Math.ceil(diff / (1000*60*60*24)));
+      if(cdNumEl) cdNumEl.textContent = String(days);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000*60*60);
+
+    // --- Portfolio Lightbox ---
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxNote = document.getElementById('lightboxNote');
+
+    function openLightbox(src, note){
+      lightboxImg.src = src;
+      lightboxImg.alt = note || 'preview';
+      lightboxNote.textContent = note || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.addEventListener('keydown', onEsc);
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+      document.removeEventListener('keydown', onEsc);
+    }
+
+    function onEsc(e){
+      if(e.key === 'Escape') closeLightbox();
+    }
+
+    document.querySelectorAll('.shotBtn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const src = btn.getAttribute('data-full') || btn.querySelector('img')?.src;
+        const note = btn.getAttribute('data-note') || '';
+        openLightbox(src, note);
+      });
+    });
+
+    lightbox?.addEventListener('click', (e)=>{
+      if(e.target && e.target.getAttribute && e.target.getAttribute('data-close') === '1') closeLightbox();
+    });
+    document.querySelectorAll('[data-close="1"]').forEach(el=> el.addEventListener('click', closeLightbox));
+  </script>
+</body>
+</html>
