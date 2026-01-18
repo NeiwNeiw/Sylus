@@ -134,14 +134,14 @@ code{ padding:2px 6px; border-radius: 10px; border:1px solid rgba(255,255,255,.1
 .inviteGate .kicker{ font-size: var(--fs-small); letter-spacing:.35em; text-transform:uppercase; color: rgba(242,242,244,.78); }
 .inviteGate h1{ margin:10px 0 8px; font-size: clamp(28px, 4.8vw, 54px); letter-spacing:.14em; }
 .inviteGate .sub{ margin:0; color: rgba(242,242,244,.74); font-size: var(--fs-small); }
-.inviteGate .meta{ margin-top: 16px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; font-size: 12px; letter-spacing:.18em; text-transform: uppercase; color: rgba(242,242,244,.72); }
+.inviteGate .meta{ margin-top: 16px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap; font-size: 16px; letter-spacing:.18em; text-transform: uppercase; color: rgba(242,242,244,.72); }
 .inviteGate .meta b{ color: rgba(255,255,255,.90); margin-right: 6px; }
 
 /* Seal: no black frame, keep original sizing, image only */
 .seal{
   margin: 18px auto 0;
-  width: clamp(56px, 9vw, 74px);
-  height: clamp(56px, 9vw, 74px);
+  width: clamp(56px, 9vw, 104px);
+  height: clamp(56px, 9vw, 104px);
   padding: 0;
   border: 0;
   background: transparent;
@@ -174,7 +174,7 @@ body.gate-opened .inviteGate{ transition: opacity .45s ease .35s; opacity:0; }
   position: fixed;
   top:0; left:0; right:0;
   z-index: 150;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
   background: rgba(6,6,8,.62);
   border-bottom: 1px solid var(--line);
 }
@@ -187,25 +187,53 @@ body.gate-opened .inviteGate{ transition: opacity .45s ease .35s; opacity:0; }
   justify-content:space-between;
   gap: 14px;
 }
-.brand{ display:flex; align-items:center; gap: 12px; min-width: 220px; }
-.brand-mark{
-  width: 36px; height: 36px;
-  border-radius: 14px;
-  background: radial-gradient(circle at 30% 30%, rgba(228,78,40,.95), rgba(228,78,40,.55) 40%, rgba(147,51,32,.55) 72%, rgba(0,0,0,.92));
-  border:1px solid rgba(255,255,255,.10);
-  box-shadow: 0 16px 44px rgba(228,78,40,.16);
+/* ===== Brand ===== */
+.brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
-.brand-text b{ display:block; letter-spacing:.28em; font-size: 12px; text-transform: uppercase; }
-.brand-text small{ display:block; color: var(--muted); letter-spacing:.20em; text-transform: uppercase; font-size: 11px; margin-top: 4px; }
 
-.nav{ display:flex; align-items:center; justify-content:center; gap: 14px; flex: 1; }
-.nav a{ letter-spacing:.26em; text-transform: uppercase; font-size: 12px; padding: 10px 10px; border-radius: 999px; border: 1px solid transparent; color: rgba(242,242,244,.88); transition: .18s ease; }
+/* icon 容器：統一尺寸 */
+.brand-mark{
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+/* icon 圖片本體 */
+.brand-mark img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ✅ 自動等比例，不裁切 */
+  display: block;
+}
+
+/* 文字 */
+.brand-text b{
+  font-size: calc(1.1rem * var(--fs-scale));
+  letter-spacing: 0.12em;
+}
+
+.brand-text small{
+  display: block;
+  font-size: calc(0.75rem * var(--fs-scale));
+  opacity: 0.75;
+  letter-spacing: 0.2em;
+}
+
+.nav{ display:flex; align-items:center; justify-content:center; gap: 16px; flex: 1; }
+.nav a{ letter-spacing:.26em; text-transform: uppercase; font-size: 18px; padding: 10px 10px; border-radius: 999px; border: 1px solid transparent; color: rgba(242,242,244,.88); transition: .18s ease; }
 .nav a:hover{ border-color: rgba(228,78,40,.22); background: rgba(228,78,40,.10); }
 .nav a.nav-cta{ border-color: rgba(228,78,40,.30); background: rgba(228,78,40,.12); }
 
 .nav-toggle{
   display:none;
-  width: 44px; height: 44px;
+  width: 50px; height: 50px;
   border-radius: 14px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.04);
@@ -240,7 +268,7 @@ body.gate-opened .inviteGate{ transition: opacity .45s ease .35s; opacity:0; }
    HERO
 ============================= */
 .hero{
-  min-height: min(92vh, 820px);
+  min-height: min(92vh, 720px);
   position:relative;
   display:flex;
   align-items:flex-end;
@@ -333,7 +361,26 @@ main{ display:block; }
   border-top: 1px solid rgba(255,255,255,.06);
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
-.section-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom: 18px; }
+/* ===== Section Head ===== */
+.section-head{
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-kicker{
+  font-size: 32px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin: 0;
+}
+
+.section-sub{
+  margin: 6px 0 0;
+  font-size: calc(.75rem * var(--fs-scale));
+  opacity: .55;
+  letter-spacing: .12em;
+}
 .section-head h2{ margin:0; font-size: var(--fs-h2); letter-spacing:.24em; text-transform: uppercase; }
 .section-head p{ margin: 8px 0 0; color: var(--muted); font-size: var(--fs-small); max-width: 68ch; }
 .hint{ margin-top: 10px; color: rgba(242,242,244,.72); font-size: var(--fs-small); }
@@ -526,4 +573,230 @@ main{ display:block; }
 @media (prefers-reduced-motion: reduce){
   .shot img{ transition:none; }
   .hero-bg, .parallax-band .bg{ transform:none !important; }
+}
+/* ===== Instructions Image ===== */
+.instructions-image{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 32px);
+}
+
+.instructions-image img{
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* 視覺一致性 */
+  border-radius: 12px;
+}
+.instructions-image img{
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+/* ===== IG Contact ===== */
+.ig-contact{
+  display: flex;
+  justify-content: center;
+  padding: 48px 16px 64px;
+}
+
+.ig-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 22px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: inherit;
+
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.12);
+
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.ig-link:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.55);
+}
+
+/* icon（不用圖片，純 CSS） */
+.ig-icon{
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.ig-icon::before,
+.ig-icon::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  border: 2px solid currentColor;
+}
+
+.ig-icon::after{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+}
+
+/* 文字 */
+.ig-text b{
+  font-size: calc(1rem * var(--fs-scale));
+  letter-spacing: .08em;
+}
+
+.ig-text small{
+  display: block;
+  font-size: calc(.75rem * var(--fs-scale));
+  opacity: .7;
+  letter-spacing: .12em;
+}
+
+/* ===== Lightbox Grid ===== */
+.lightbox-grid{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.lightbox-grid img{
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform .25s ease;
+}
+
+.lightbox-grid img:hover{
+  transform: scale(1.02);
+}
+
+/* ===== Lightbox Overlay ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lightbox.show{
+  display: flex;
+}
+
+.lb-img{
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+
+/* buttons */
+.lb-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 48px;
+  cursor: pointer;
+  padding: 12px;
+  user-select: none;
+}
+
+.lb-btn.prev{ left: 24px; }
+.lb-btn.next{ right: 24px; }
+
+
+/* ===== Two Images Lightbox ===== */
+.lightbox-row{
+  max-width: 720px;              /* 控制整組寬度 */
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.lightbox-row img{
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  transition: transform .25s ease;
+}
+
+.lightbox-row img:hover{
+  transform: scale(1.02);
+}
+
+/* ===== Lightbox Viewer ===== */
+.lightbox-view{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lightbox-view.show{
+  display: flex;
+}
+
+.lightbox-view .lb-img{
+  max-width: 88vw;
+  max-height: 85vh;
+  border-radius: 12px;
+}
+
+/* arrows */
+.lightbox-view .lb-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 44px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.lightbox-view .prev{ left: 24px; }
+.lightbox-view .next{ right: 24px; }
+
+/* mobile */
+@media (max-width: 600px){
+  .lightbox-row{
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+/* 強制縮小 IG / Threads icon */
+.ig-link{
+  width: 100px;
+  height: 100px;
+}
+
+.ig-link img{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }
