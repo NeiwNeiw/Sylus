@@ -624,30 +624,6 @@ main{ display:block; }
   box-shadow: 0 18px 40px rgba(0,0,0,.55);
 }
 
-/* icon（不用圖片，純 CSS） */
-.ig-icon{
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-
-.ig-icon::before,
-.ig-icon::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 6px;
-  border: 2px solid currentColor;
-}
-
-.ig-icon::after{
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  top: 4px;
-  left: 4px;
-}
-
 /* 文字 */
 .ig-text b{
   font-size: calc(1rem * var(--fs-scale));
