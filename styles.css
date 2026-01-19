@@ -157,7 +157,7 @@ code{ padding:2px 6px; border-radius: 10px; border:1px solid rgba(255,255,255,.1
   filter: drop-shadow(0 16px 28px rgba(0,0,0,.55));
   transition: transform .16s ease, filter .16s ease;
 }
-.seal:hover .seal-img{ transform: translateY(-1px) scale(1.03); filter: drop-shadow(0 20px 34px rgba(0,0,0,.62)); }
+.seal:hover .seal-img{ transform: translateY(-1px) scale(1.03); filter: drop-shadow(0 20px 34px rgba(0,0,0,.62)); width: 100%;height: 100%;object-fit: contain;display: block;}
 .seal:active .seal-img{ transform: translateY(0) scale(.99); }
 
 body.gate-opened .inviteGate{ pointer-events:none; }
@@ -276,13 +276,15 @@ body.gate-opened .inviteGate{ transition: opacity .45s ease .35s; opacity:0; }
 }
 .hero-bg{
   position:absolute;
-  inset: -10% 0 -10% 0;
+  inset: -4% 0 -4% 0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.18) 0%, rgba(0,0,0,.78) 85%),
     url('image/sylus.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+ 
+  background-size: 80%;
   filter: saturate(.95) contrast(1.05);
   transform: translate3d(0, calc(var(--parY) * .08), 0);
   will-change: transform;
@@ -307,7 +309,7 @@ body.gate-opened .inviteGate{ transition: opacity .45s ease .35s; opacity:0; }
 .hero-title{ margin: 14px 0 10px; font-size: var(--fs-h1); line-height: 1.02; letter-spacing:.12em; }
 .hero-title span{ display:block; font-size: .54em; color: rgba(242,242,244,.86); letter-spacing:.18em; margin-top: 10px; }
 .hero-sub{ margin: 0; max-width: 60ch; color: rgba(242,242,244,.82); font-size: var(--fs-base); }
-.hero-actions{ margin-top: 18px; display:flex; gap:10px; flex-wrap:wrap; }
+.hero-actions{ margin-top: 18px; display:flex; gap:12px; flex-wrap:wrap; }
 .btn{
   border: 1px solid rgba(228,78,40,.35);
   background: rgba(228,78,40,.14);
@@ -392,7 +394,7 @@ main{ display:block; }
   box-shadow: var(--shadow);
   padding: 16px;
 }
-.panel h3{ margin:0; letter-spacing:.20em; text-transform: uppercase; font-size: 14px; }
+.panel h3{ margin:0; letter-spacing:.20em; text-transform: uppercase; font-size: 18px; }
 .panel ul{ margin: 10px 0 0; padding-left: 18px; color: rgba(242,242,244,.78); }
 .muted{ color: var(--muted); }
 
@@ -467,13 +469,14 @@ main{ display:block; }
 }
 .parallax-band .bg{
   position:absolute;
-  inset:-20% 0 -20% 0;
+  inset: -8% 0 -8% 0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.78) 80%),
     url('image/sylus.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 65%;
   transform: translate3d(0, calc(var(--parY) * .12), 0) scale(1.05);
   will-change: transform;
   filter: saturate(.92) contrast(1.06);
@@ -799,4 +802,57 @@ main{ display:block; }
   max-height: 100%;
   width: auto;
   height: auto;
+}
+/* Portfolio Lightbox */
+.pbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.85);
+  z-index: 120;
+}
+
+.pbox.show{ display:flex; }
+
+.pbox-card{
+  margin: 0;
+  max-width: min(720px, 92vw);
+  text-align: center;
+}
+
+.pbox-card img{
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+.pbox-card figcaption{
+  margin-top: 10px;
+  font-size: calc(.85rem * var(--fs-scale));
+  opacity: .85;
+  letter-spacing: .06em;
+}
+
+.pbox-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  color: #fff;
+  font-size: 44px;
+  cursor: pointer;
+  padding: 10px 14px;
+  user-select: none;
+}
+
+.pbox-btn.prev{ left: 16px; }
+.pbox-btn.next{ right: 16px; }
+
+@media (max-width: 600px){
+  .pbox-btn{ font-size: 36px; }
 }
