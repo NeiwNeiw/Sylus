@@ -8,7 +8,7 @@
   <!-- Zen Kurenaido (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
+  <link href="https://fonts.google.com/share?selection.family=UoqMunThenKhung|Zen+Kurenaido&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -62,7 +62,8 @@
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
 
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="#about">關於</a>
+        <!--<a href="#about">關於</a>-->
+        <a href="#type">方案說明</a>
         <a href="#portfolio">狸來扭鴉</a>
         <a href="#lightbox" >燈箱資訊</a>
          <a href="#ext" >敬請期待</a>
@@ -97,7 +98,7 @@
     <section class="section" id="about">
       <div class="section-head">
         <h3 class="section-kicker">關於</h3>
-        <p class="section-sub">Please comply with.</p>
+        <p class="section-sub">About us.</p>
       </div>
 
       <div class="about-grid">
@@ -114,57 +115,205 @@
             <li><b>注意事項</b>：🚫禁止COS任何一位男主</li>
           </ul>
         </div>
+        <!--
         <div class="panel">
           <h3>方案一覽</h3>
-            <li><b>魂靈牽繫 </b>$1,800 👑</li>
-            <li><b>深淵裁決者 </b>$1,600</li>
-            <li><b>暗點支配者 </b>$1,100</li>         
+            <ul>
+              <li><b>魂靈牽繫 </b>$1,800 👑</li>
+              <li><b>深淵裁決者 </b>$1,600</li>
+              <li><b>暗點支配者 </b>$1,100</li> 
+            </ul>        
         </div>
+        -->
       </div>
     </section>
+
+    <section class="section" id="type">
+      <div class="section-head">
+        <h3 class="section-kicker">方案說明</h3>
+        <p class="section-sub">品項僅供參考，主辦方保有最終解釋權。</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h3>𓊈魂靈牽繫 $1,800𓊉</h3>
+          <p class="muted"><b><ins>雙coser 1對1專屬互動時段</ins>👑</b></p>
+          <p class="muted"><b>豪華豐富參加禮：</b></p>
+
+          <ul class="gift-list">
+            <li>卡冊 👑</li>
+            <li>小零錢包 👑</li>
+            <li>桌曆 👑</li>
+            <li>同人文 👑</li>
+            <li>色色明信片 👑</li>
+            <li>票夾</li>
+            <li>筆記本</li>
+            <li>轉印貼</li>
+            <li>圍兜兜</li>
+            <li>購物袋</li>
+            <li>鐳射票</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>𓊈深淵裁決者 $1,600𓊉</h3>
+          <p class="muted"><b>豪華豐富參加禮：</b></p>
+          <ul class="gift-list">
+            <li>卡冊 👑</li>
+            <li>小零錢包 👑</li>
+            <li>桌曆 👑</li>
+            <li>同人文 👑</li>
+            <li>色色明信片 👑</li>
+            <li>票夾</li>
+            <li>筆記本</li>
+            <li>轉印貼</li>
+            <li>圍兜兜</li>
+            <li>購物袋</li>
+            <li>鐳射票</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>𓊈暗點支配者 $1,100𓊉</h3>
+          <p class="muted">精緻參加禮：</p>
+          <ul class="gift-list">
+            <li>票夾</li>
+            <li>筆記本</li>
+            <li>轉印貼</li>
+            <li>圍兜兜</li>
+            <li>購物袋</li>
+            <li>鐳射票</li>
+          </ul>      
+        </div>
+        
+      </div>
+    </section>
+    <section class="section section-dark" id="join-gifts" aria-label="參加禮">
+      <div class="section-head">
+        <h3 class="section-kicker">參加禮-報名即可獲得</h3>
+        <p class="section-sub">點擊圖片可放大檢視。</p>
+      </div>
+
+      <div class="gift-collage" id="joinGiftsCollage" aria-label="參加禮拼貼">
+        <!-- 1 (大) -->
+        <figure class="gift g1">
+          <button class="giftBtn" type="button"
+            data-full="image/gift/g01.jpg"
+            data-note="【生日紀念筆記本】—— 讓這專屬於妳的筆記本，紀錄下生活中的一點一滴吧。">
+            <img src="image/gift/g01.jpg" alt="參加禮01" loading="lazy">
+          </button>
+        </figure>
+
+        <!-- 2 -->
+        <figure class="gift g2">
+          <button class="giftBtn" type="button"
+            data-full="image/gift/g02.jpg"
+            data-note="【誓約紀念票夾】—— 不只今天，這份誓言，沒有期限。">
+            <img src="image/gift/g02.jpg" alt="參加禮02" loading="lazy">
+          </button>
+        </figure>
+
+        <!-- 3 -->
+        <figure class="gift g3">
+          <button class="giftBtn" type="button"
+            data-full="image/gift/g03.jpg"
+            data-note="【鏈路之間 雷射票】—— 牽引我們靠近彼此的，從不只是因為鏈路，妳是知道的。">
+            <img src="image/gift/g03.jpg" alt="參加禮03" loading="lazy">
+          </button>
+        </figure>
+
+        <!-- 4 -->
+        <figure class="gift g4 is-empty">
+          <div class="shot-placeholder">敬請期待</div>
+          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
+        </figure>
+
+        <!-- 5 -->
+        <figure class="gift g5 is-empty">
+          <div class="shot-placeholder">敬請期待</div>
+          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
+        </figure>
+
+        <!-- 6 -->
+        <figure class="gift g6 is-empty">
+          <div class="shot-placeholder">敬請期待</div>
+          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
+        </figure>
+      </div>
+    </section>  
+
+    <!-- ✅ 參加禮專用 Lightbox（貼在 </body> 前） -->
+    <div class="gbox" id="joinGiftBox" aria-hidden="true">
+      <button class="gbox-btn prev" type="button" aria-label="Previous">‹</button>
+
+      <figure class="gbox-card">
+        <img id="gboxImg" alt="">
+        <figcaption id="gboxNote"></figcaption>
+      </figure>
+
+      <button class="gbox-btn next" type="button" aria-label="Next">›</button>
+    </div>
+
 
     <!-- Portfolio (click to enlarge + one-line note) -->
     <section class="section" id="portfolio">
       <div class="section-head">
-        <h3 class="section-kicker">扭蛋禮品一覽</h3>
+        <h3 class="section-kicker">狸來扭鴉-禮品一覽</h3>
         <p class="section-sub">A gift specially prepared for you.</p>
       </div>
-      <div class="masonry" id="masonry">
-        <!-- 你可以把 src 換成自己的圖：image/p01.jpg ... -->
-        <figure class="shot shot-lg">
-          <button class="shotBtn" type="button" data-full="image/p01.jpg" data-note="這款純手工製作的擴香石，是否能用香氣帶領妳，想起與他的某時某刻？">
-            <img src="image/p01.jpg" alt="扭蛋禮01" loading="lazy" />
-          </button>
-          <figcaption class="cap"><span class="note">扭蛋禮01</span></figcaption>
-        </figure>
+      <div class="album" id="album" aria-label="扭蛋禮相簿">
+      <div class="album-viewport">
+        <div class="album-track">
+          <!-- Slide 1 -->
+          <figure class="album-slide">
+            <button class="shotBtn" type="button" data-group="gacha"
+              data-full="image/p01.jpg"
+              data-note="這款純手工製作的擴香石，是否能用香氣帶領妳，想起與他的某時某刻？">
+              <img src="image/p01.jpg" alt="扭蛋禮01" loading="lazy" />
+            </button>
+            <figcaption class="cap"><span class="note">扭蛋禮01</span></figcaption>
+          </figure>
 
-        <figure class="shot">
-          <button class="shotBtn" type="button" data-full="image/p02.jpg" data-note="純手工製作的好氣鴉置物盤，鴉來收住你日常的小物!">
-            <img src="image/p02.jpg" alt="扭蛋禮02" loading="lazy" />
-          </button>
-          <figcaption class="cap"><span class="note">扭蛋禮02</span></figcaption>
-        </figure>
+          <!-- Slide 2 -->
+          <figure class="album-slide">
+            <button class="shotBtn" type="button" data-group="gacha"
+              data-full="image/p02.jpg"
+              data-note="純手工製作的好氣鴉置物盤，鴉來收住你日常的小物!">
+              <img src="image/p02.jpg" alt="扭蛋禮02" loading="lazy" />
+            </button>
+            <figcaption class="cap"><span class="note">扭蛋禮02</span></figcaption>
+          </figure>
 
-        <figure class="shot">
-          <button class="shotBtn" type="button" data-full="image/p03.jpg" data-note="由Vaness繪師所繪製，為秦徹生賀特別做成美麗的周邊。">
-            <img src="image/p03.jpg" alt="扭蛋禮03" loading="lazy" />
-          </button>
-          <figcaption class="cap"><span class="note">扭蛋禮03</span></figcaption>
-        </figure>
+          <!-- Slide 3 -->
+          <figure class="album-slide">
+            <button class="shotBtn" type="button" data-group="gacha"
+              data-full="image/p03.jpg"
+              data-note="由Vaness繪師所繪製，為秦徹生賀特別做成美麗的周邊。">
+              <img src="image/p03.jpg" alt="扭蛋禮03" loading="lazy" />
+            </button>
+            <figcaption class="cap"><span class="note">扭蛋禮03</span></figcaption>
+          </figure>
 
-        <figure class="shot shot-tall">
-          <button class="shotBtn" type="button" data-full="image/p04.jpg" data-note="中國 秦徹Sylus_0418生賀組周邊掛畫">
-            <img src="image/p04.jpg" alt="扭蛋禮04" loading="lazy" />
-          </button>
-          <figcaption class="cap"><span class="note">扭蛋禮04</span></figcaption>
-        </figure>
+          <!-- Slide 4 -->
+          <figure class="album-slide">
+            <button class="shotBtn" type="button" data-group="gacha"
+              data-full="image/p04.jpg"
+              data-note="中國 秦徹Sylus_0418生賀組周邊掛畫">
+              <img src="image/p04.jpg" alt="扭蛋禮04" loading="lazy" />
+            </button>
+            <figcaption class="cap"><span class="note">扭蛋禮04</span></figcaption>
+          </figure>
 
-        <div class="shot is-empty">
-          <div class="shot-placeholder">敬請期待</div>
+          <!-- Coming soon -->
+          <figure class="album-slide is-empty" aria-hidden="false">
+            <div class="shot-placeholder">敬請期待</div>
+            <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
+          </figure>
         </div>
-
-        
       </div>
+
+      <button class="album-nav next" type="button" aria-label="下一張">›</button>
+      <div class="album-dots" aria-label="相簿頁碼"></div>
+    </div>
+
     </section>
     <!-- Portfolio Lightbox (for 扭蛋禮/作品集) -->
     <div class="pbox" id="portfolioBox" aria-hidden="true">
@@ -227,7 +376,7 @@
             <li><b>日期</b>：2026/04/18</li>
             <li><b>地點</b>：高雄市苓雅區青年二路238號</li>
             <!--<li><b>停車</b>：＿＿＿＿</li>-->
-            <li><b>大眾運輸</b>：輕軌搭到光榮碼頭站</li>
+            <li><b>大眾運輸</b>：輕軌搭到光榮碼頭站步行約3分鐘</li>
           </ul>
         </div>
 
@@ -328,7 +477,8 @@
     idx = (idx + 1) % items.length;
     render();
   }
-
+  
+  
   // 點縮圖開啟（事件代理：之後加更多圖也不用再綁）
   root.addEventListener('click', (e) => {
     const btn = e.target.closest('.shotBtn[data-full]');
@@ -529,6 +679,185 @@ window.addEventListener('keydown', e => {
       });
     });
   </script>
+  <script>
+(() => {
+  const album = document.getElementById('album');
+  if(!album) return;
+
+  const track = album.querySelector('.album-track');
+  const slides = Array.from(album.querySelectorAll('.album-slide'));
+  const dotsWrap = album.querySelector('.album-dots');
+  const prevBtn = album.querySelector('.album-nav.prev');
+  const nextBtn = album.querySelector('.album-nav.next');
+
+  let idx = 0;
+  let timer = null;
+  const AUTOPLAY_MS = 3200;
+
+  // build dots
+  dotsWrap.innerHTML = '';
+  slides.forEach((_, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'album-dot' + (i === 0 ? ' is-active' : '');
+    b.setAttribute('aria-label', `第 ${i+1} 張`);
+    b.addEventListener('click', () => go(i, true));
+    dotsWrap.appendChild(b);
+  });
+
+  const dots = Array.from(dotsWrap.querySelectorAll('.album-dot'));
+
+  function render(){
+    track.style.transform = `translateX(${-idx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === idx));
+  }
+
+  function go(i, userAction=false){
+    idx = (i + slides.length) % slides.length;
+    render();
+    if(userAction) restart();
+  }
+
+  function next(userAction=false){ go(idx + 1, userAction); }
+  function prev(userAction=false){ go(idx - 1, userAction); }
+
+  function start(){
+    stop();
+    timer = setInterval(() => next(false), AUTOPLAY_MS);
+  }
+  function stop(){
+    if(timer) { clearInterval(timer); timer = null; }
+  }
+  function restart(){
+    stop();
+    start();
+  }
+
+  // controls
+  prevBtn?.addEventListener('click', () => prev(true));
+  nextBtn?.addEventListener('click', () => next(true));
+
+  // pause on hover (desktop)
+  album.addEventListener('mouseenter', stop);
+  album.addEventListener('mouseleave', start);
+
+  // swipe (mobile)
+  let sx = 0, dx = 0, touching = false;
+  const viewport = album.querySelector('.album-viewport');
+  viewport.addEventListener('touchstart', (e) => {
+    touching = true;
+    sx = e.touches[0].clientX;
+    dx = 0;
+    stop();
+  }, {passive:true});
+
+  viewport.addEventListener('touchmove', (e) => {
+    if(!touching) return;
+    dx = e.touches[0].clientX - sx;
+  }, {passive:true});
+
+  viewport.addEventListener('touchend', () => {
+    touching = false;
+    if(Math.abs(dx) > 40){
+      dx < 0 ? next(true) : prev(true);
+    } else {
+      restart();
+    }
+  });
+
+  // keyboard
+  window.addEventListener('keydown', (e) => {
+    // 避免你在 lightbox 打開時干擾（若你有用 show class）
+    if(document.getElementById('portfolioBox')?.classList.contains('show')) return;
+    if(e.key === 'ArrowLeft') prev(true);
+    if(e.key === 'ArrowRight') next(true);
+  });
+
+  render();
+  start();
+})();
+</script>
+<script>
+(() => {
+  const root = document.getElementById('joinGiftsCollage');
+  const box = document.getElementById('joinGiftBox');
+  const imgEl = document.getElementById('gboxImg');
+  const noteEl = document.getElementById('gboxNote');
+  const prevBtn = box?.querySelector('.prev');
+  const nextBtn = box?.querySelector('.next');
+
+  if (!root || !box || !imgEl || !noteEl) return;
+
+  let items = [];
+  let idx = 0;
+
+  function collect(){
+    items = Array.from(root.querySelectorAll('.giftBtn[data-full]'))
+      .map(el => ({ full: el.dataset.full, note: el.dataset.note || '' }));
+  }
+
+  function render(){
+    const it = items[idx];
+    imgEl.src = it.full;
+    noteEl.textContent = it.note;
+
+    const multi = items.length > 1;
+    prevBtn.style.display = multi ? '' : 'none';
+    nextBtn.style.display = multi ? '' : 'none';
+  }
+
+  function openAt(i){
+    collect();
+    if (!items.length) return;
+
+    idx = Math.max(0, Math.min(i, items.length - 1));
+    render();
+    box.classList.add('show');
+    box.setAttribute('aria-hidden', 'false');
+  }
+
+  function close(){
+    box.classList.remove('show');
+    box.setAttribute('aria-hidden', 'true');
+  }
+
+  function prev(){
+    idx = (idx - 1 + items.length) % items.length;
+    render();
+  }
+
+  function next(){
+    idx = (idx + 1) % items.length;
+    render();
+  }
+
+  // ✅ 只監聽參加禮區塊內的 giftBtn（完全不影響原本）
+  root.addEventListener('click', (e) => {
+    const btn = e.target.closest('.giftBtn[data-full]');
+    if (!btn) return;
+
+    collect();
+    const i = items.findIndex(it => it.full === btn.dataset.full);
+    openAt(i >= 0 ? i : 0);
+  });
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // 點背景關閉
+  box.addEventListener('click', (e) => {
+    if (e.target === box) close();
+  });
+
+  // 鍵盤支援（只在 gbox 開啟時生效）
+  window.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('show')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
 
 </body>
 </html>
