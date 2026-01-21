@@ -1002,11 +1002,14 @@ main{ display:block; }
 .gift img{
   width: 100%;
   height: 100%;
-  object-fit: cover;
   display: block;
-  transform: scale(1.02);
-  transition: transform .45s ease;
+
+  object-fit: contain;          /* ✅ 不裁切、不變形，按比例縮放 */
+  object-position: center;
+
+  background: rgba(0,0,0,.25);  /* ✅ 空白處用暗底補齊 */
 }
+
 
 .gift:hover img{ transform: scale(1.08); }
 
@@ -1094,3 +1097,125 @@ main{ display:block; }
   font-weight: 400;
   font-style: normal;
 }
+/* ===== join-gifts collage: keep >= 4:3 ===== */
+#joinGiftsCollage{
+  grid-auto-rows: 1fr; /* 讓高度由 aspect-ratio 決定 */
+}
+
+/* 每個格子至少 4:3，不允許太細長 */
+#joinGiftsCollage .gift{
+  aspect-ratio: 4 / 3;
+}
+
+/* 大圖就放大比例（仍維持不細長） */
+#joinGiftsCollage .gift.g1{
+  aspect-ratio: 4/3; /* 你也可改 4/3 或 16/10 */
+}
+
+/* 圖片維持比例，不變形 */
+#joinGiftsCollage .gift img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 保留比例，必要時裁切 */
+  object-position: center;
+  display: block;
+}
+/* ===== join-gifts collage dark base ===== */
+#joinGiftsCollage .gift{
+  background: #000;                 /* 拼貼底圖改黑 */
+}
+
+/* button 本身也清成透明，避免白底 */
+#joinGiftsCollage .giftBtn{
+  background: transparent;
+}
+
+/* 若圖片比例不足時，避免露白 */
+#joinGiftsCollage .gift img{
+  background: #000;
+}
+
+/* 若有 placeholder（之後你又用回敬請期待） */
+#joinGiftsCollage .shot-placeholder{
+  background: #000;
+  color: rgba(255,255,255,.6);
+}
+/* ===== Gift item buttons ===== */
+.gift-picks{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.gift-pill{
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(0,0,0,.35);
+  color: rgba(255,255,255,.88);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: calc(.9rem * var(--fs-scale));
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+
+.gift-pill:hover{
+  transform: translateY(-1px);
+  background: rgba(0,0,0,.55);
+  border-color: rgba(255,255,255,.28);
+}
+
+/* ===== Item popup (isolated) ===== */
+.itembox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.82);
+  z-index: 160;
+  padding: 18px;
+}
+.itembox.show{ display:flex; }
+
+.itembox-card{
+  position: relative;
+  width: min(820px, 94vw);
+  background: #000;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+
+.itembox-img{
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.itembox-title{
+  margin: 0;
+  padding: 10px 14px 14px;
+  font-size: calc(.9rem * var(--fs-scale));
+  opacity: .82;
+  letter-spacing: .06em;
+}
+
+.itembox-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.itembox-close:hover{ background: rgba(0,0,0,.7); }

@@ -6,8 +6,8 @@
   <title>Blessing For Your Birthday</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UoqMunThenKhung&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UoqMunThenKhung&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -138,104 +138,75 @@
           <p class="muted"><b><ins>雙coser 1對1專屬互動時段</ins>👑</b></p>
           <p class="muted"><b>豪華豐富參加禮：</b></p>
 
-          <ul class="gift-list">
-            <li>卡冊 👑</li>
-            <li>小零錢包 👑</li>
-            <li>桌曆 👑</li>
-            <li>同人文 👑</li>
-            <li>色色明信片 👑</li>
-            <li>票夾</li>
-            <li>筆記本</li>
-            <li>轉印貼</li>
-            <li>圍兜兜</li>
-            <li>帆布袋</li>
-            <li>鐳射票</li>
-          </ul>
+          <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift//soon.jpg">桌曆 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">色色明信片 👑</button>
+
+            <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">轉印貼</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">圍兜兜</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">購物袋</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g03.jpg">鐳射票</button>
+          </div>
         </div>
         <div class="panel">
           <h3>𓊈深淵裁決者 $1,600𓊉</h3>
           <p class="muted"><b>豪華豐富參加禮：</b></p>
-          <ul class="gift-list">
-            <li>卡冊 👑</li>
-            <li>小零錢包 👑</li>
-            <li>桌曆 👑</li>
-            <li>同人文 👑</li>
-            <li>色色明信片 👑</li>
-            <li>票夾</li>
-            <li>筆記本</li>
-            <li>轉印貼</li>
-            <li>圍兜兜</li>
-            <li>帆布袋</li>
-            <li>鐳射票</li>
-          </ul>
+          <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift//soon.jpg">桌曆 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">色色明信片 👑</button>
+
+            <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">轉印貼</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">圍兜兜</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">購物袋</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g03.jpg">鐳射票</button>
         </div>
-        <div class="panel">
+      </div>
+      <div class="panel">
           <h3>𓊈暗點支配者 $1,100𓊉</h3>
           <p class="muted">精緻參加禮：</p>
-          <ul class="gift-list">
-            <li>票夾</li>
-            <li>筆記本</li>
-            <li>轉印貼</li>
-            <li>圍兜兜</li>
-            <li>帆布袋</li>
-            <li>鐳射票</li>
-          </ul>      
+          <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">轉印貼</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">圍兜兜</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">購物袋</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g03.jpg">鐳射票</button>
+          </div>  
         </div>
-        
+      </div>
+      <!-- ✅ 獨立彈窗（貼在 </body> 前） -->
+      <div class="itembox" id="giftItemBox" aria-hidden="true">
+        <div class="itembox-card" role="dialog" aria-modal="true" aria-label="品項圖片">
+          <button class="itembox-close" type="button" aria-label="Close">×</button>
+          <img class="itembox-img" id="giftItemImg" src="" alt="">
+          <p class="itembox-title" id="giftItemTitle"></p>
+        </div>
       </div>
     </section>
     <section class="section section-dark" id="join-gifts" aria-label="參加禮">
       <div class="section-head">
-        <h3 class="section-kicker">參加禮-報名即可獲得</h3>
+        <h3 class="section-kicker">參加禮預覽</h3>
         <p class="section-sub">點擊圖片可放大檢視。</p>
       </div>
-
       <div class="gift-collage" id="joinGiftsCollage" aria-label="參加禮拼貼">
-        <!-- 1 (大) -->
-        <figure class="gift g1">
-          <button class="giftBtn" type="button"
-            data-full="image/gift/g01.jpg"
-            data-note="【生日紀念筆記本】—— 讓這專屬於妳的筆記本，紀錄下生活中的一點一滴吧。">
-            <img src="image/gift/g01.jpg" alt="參加禮01" loading="lazy">
-          </button>
-        </figure>
-
-        <!-- 2 -->
-        <figure class="gift g2">
-          <button class="giftBtn" type="button"
-            data-full="image/gift/g02.jpg"
-            data-note="【誓約紀念票夾】—— 不只今天，這份誓言，沒有期限。">
-            <img src="image/gift/g02.jpg" alt="參加禮02" loading="lazy">
-          </button>
-        </figure>
-
-        <!-- 3 -->
-        <figure class="gift g3">
-          <button class="giftBtn" type="button"
-            data-full="image/gift/g03.jpg"
-            data-note="【鏈路之間 雷射票】—— 牽引我們靠近彼此的，從不只是因為鏈路，妳是知道的。">
-            <img src="image/gift/g03.jpg" alt="參加禮03" loading="lazy">
-          </button>
-        </figure>
-
-        <!-- 4 -->
-        <figure class="gift g4 is-empty">
-          <div class="shot-placeholder">敬請期待</div>
-          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
-        </figure>
-
-        <!-- 5 -->
-        <figure class="gift g5 is-empty">
-          <div class="shot-placeholder">敬請期待</div>
-          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
-        </figure>
-
-        <!-- 6 -->
-        <figure class="gift g6 is-empty">
-          <div class="shot-placeholder">敬請期待</div>
-          <figcaption class="cap"><span class="note">Coming soon</span></figcaption>
-        </figure>
+        <figure class="gift g1"><button class="giftBtn" type="button" data-slot="0"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g2"><button class="giftBtn" type="button" data-slot="1"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g3"><button class="giftBtn" type="button" data-slot="2"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g4"><button class="giftBtn" type="button" data-slot="3"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g5"><button class="giftBtn" type="button" data-slot="4"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g6"><button class="giftBtn" type="button" data-slot="5"><img alt="" loading="lazy"></button></figure>
       </div>
+      
     </section>  
 
     <!-- ✅ 參加禮專用 Lightbox（貼在 </body> 前） -->
@@ -777,6 +748,57 @@ window.addEventListener('keydown', e => {
 </script>
 <script>
 (() => {
+  const TOTAL = 4;        // g01 ~ g20
+  const SHOW = 4;          // ⭐ 改成只顯示 4 張
+  const FOLDER = 'image/gift/';
+  const EXT = '.jpg';
+
+  const root = document.getElementById('joinGiftsCollage');
+  if (!root) return;
+
+  const allSlots = Array.from(root.querySelectorAll('.gift'));
+  const btnSlots = Array.from(root.querySelectorAll('.giftBtn'));
+
+  // 只顯示前 4 格，其餘隱藏（不刪 DOM，版面穩）
+  allSlots.forEach((slot, i) => {
+    slot.style.display = i < SHOW ? '' : 'none';
+  });
+
+  const slots = btnSlots.slice(0, SHOW);
+  if (slots.length < SHOW) return;
+
+  // 洗牌 1~20
+  const nums = Array.from({ length: TOTAL }, (_, i) => i + 1);
+  for (let i = nums.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [nums[i], nums[j]] = [nums[j], nums[i]];
+  }
+  const pick = nums.slice(0, SHOW);
+
+  // 填入圖片
+  pick.forEach((n, i) => {
+    const code = String(n).padStart(2, '0');
+    const src = `${FOLDER}g${code}${EXT}`;
+
+    const btn = slots[i];
+    const img = btn.querySelector('img');
+
+    btn.dataset.full = src;
+    btn.dataset.note = `參加禮 ${code}`;
+
+    if (img) {
+      img.src = src;
+      img.alt = `參加禮 g${code}`;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+    }
+  });
+})();
+</script>
+
+
+<script>
+(() => {
   const root = document.getElementById('joinGiftsCollage');
   const box = document.getElementById('joinGiftBox');
   const imgEl = document.getElementById('gboxImg');
@@ -853,6 +875,50 @@ window.addEventListener('keydown', e => {
     if (e.key === 'Escape') close();
     if (e.key === 'ArrowLeft') prev();
     if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
+<script>
+(() => {
+  const box = document.getElementById('giftItemBox');
+  const img = document.getElementById('giftItemImg');
+  const title = document.getElementById('giftItemTitle');
+  if (!box || !img || !title) return;
+
+  function openItem(src, label){
+    img.src = src;
+    img.alt = label || '';
+    title.textContent = label || '';
+    box.classList.add('show');
+    box.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeItem(){
+    box.classList.remove('show');
+    box.setAttribute('aria-hidden', 'true');
+    img.src = '';
+  }
+
+  // 只監聽 gift-picks 的按鈕，完全不影響你原本的 lightbox
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.gift-pill[data-img]');
+    if (!btn) return;
+    e.preventDefault();
+    openItem(btn.dataset.img, btn.textContent.trim());
+  });
+
+  // 關閉按鈕
+  box.querySelector('.itembox-close')?.addEventListener('click', closeItem);
+
+  // 點背景關閉
+  box.addEventListener('click', (e) => {
+    if (e.target === box) closeItem();
+  });
+
+  // ESC 關閉
+  window.addEventListener('keydown', (e) => {
+    if (!box.classList.contains('show')) return;
+    if (e.key === 'Escape') closeItem();
   });
 })();
 </script>
