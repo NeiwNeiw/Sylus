@@ -142,11 +142,12 @@
           <p class="muted"><b>豪華豐富參加禮：</b></p>
 
           <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g05.jpg">四季票根 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift//soon.jpg">桌曆 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文（18+）👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">明信片（18+）👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">色色明信片 👑</button>
 
             <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
             <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
@@ -160,11 +161,12 @@
           <h3>𓊈深淵裁決者 $1,600𓊉</h3>
           <p class="muted"><b>豪華豐富參加禮：</b></p>
           <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g06.jpg">春夏票根</button>
             <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift//soon.jpg">桌曆 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文（18+）👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">明信片（18+）👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">色色明信片 👑</button>
 
             <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
             <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
@@ -178,6 +180,7 @@
           <h3>𓊈暗點支配者 $1,100𓊉</h3>
           <p class="muted">精緻參加禮：</p>
           <div class="gift-picks" aria-label="參加禮品項">
+            <button class="gift-pill" type="button" data-img="image/gift/g06.jpg">春夏票根</button>
             <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
             <button class="gift-pill" type="button" data-img="image/gift/g01.jpg">筆記本</button>
             <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">轉印貼</button>
@@ -208,6 +211,7 @@
         <figure class="gift g4"><button class="giftBtn" type="button" data-slot="3"><img alt="" loading="lazy"></button></figure>
         <figure class="gift g5"><button class="giftBtn" type="button" data-slot="4"><img alt="" loading="lazy"></button></figure>
         <figure class="gift g6"><button class="giftBtn" type="button" data-slot="5"><img alt="" loading="lazy"></button></figure>
+        <figure class="gift g7"><button class="giftBtn" type="button" data-slot="6"><img alt="" loading="lazy"></button></figure>
       </div>
       
     </section>  
@@ -761,8 +765,8 @@ window.addEventListener('keydown', e => {
 </script>
 <script>
 (() => {
-  const TOTAL = 4;        // g01 ~ g20
-  const SHOW = 4;          // ⭐ 改成只顯示 4 張
+  const TOTAL = 7;        // g01 ~ g20
+  const SHOW = 5;          // ⭐ 改成只顯示 4 張
   const FOLDER = 'image/gift/';
   const EXT = '.jpg';
 
@@ -788,24 +792,36 @@ window.addEventListener('keydown', e => {
   }
   const pick = nums.slice(0, SHOW);
 
-  // 填入圖片
-  pick.forEach((n, i) => {
-    const code = String(n).padStart(2, '0');
-    const src = `${FOLDER}g${code}${EXT}`;
+  const noteMap = {
+  '01': '參加禮｜筆記本',
+  '02': '參加禮｜票夾',
+  '03': '參加禮｜雷射票',
+  '04': '參加禮｜卡冊',
+  '05': '參加禮｜四季票根',
+  '06': '參加禮｜春夏票根',
+  '07': '參加禮｜轉印貼(不含蠟燭)'
+};
 
-    const btn = slots[i];
-    const img = btn.querySelector('img');
+pick.forEach((n, i) => {
+  const code = String(n).padStart(2, '0');
+  const src = `${FOLDER}g${code}${EXT}`;
 
-    btn.dataset.full = src;
-    btn.dataset.note = `參加禮 ${code}`;
+  const btn = slots[i];
+  const img = btn.querySelector('img');
 
-    if (img) {
-      img.src = src;
-      img.alt = `參加禮 g${code}`;
-      img.loading = 'lazy';
-      img.decoding = 'async';
-    }
-  });
+  btn.dataset.full = src;
+
+  // ⭐ 用圖片編號找對應文字
+  btn.dataset.note = noteMap[code] || `參加禮 g${code}`;
+
+  if (img) {
+    img.src = src;
+    img.alt = btn.dataset.note;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+  }
+});
+
 })();
 </script>
 
