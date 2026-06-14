@@ -1222,130 +1222,41 @@ main{ display:block; }
 /* ===== Flower Wall (img-based) ===== */
 
 .flower-wall{
-  position: relative;
-  min-height: 42vh;
-  max-width: var(--max);     /* ⭐ 限制寬度 */
-  margin: clamp(48px, 8vw, 96px) auto; /* ⭐ 左右 auto = 置中 */
-  overflow: hidden;
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
 
-  display: flex;
-  align-items: flex-end;
+  aspect-ratio:16/9;
+
+  overflow:hidden;
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  background:rgba(255,255,255,.03);
+
+  box-shadow:var(--shadow);
 }
 
-
-/* 圖片本體 */
 .flower-wall-img{
-  position: absolute;
-  inset: 0;
-  width: 80%;
-  height: 80%;
-  object-fit: cover;        /* 保持比例、不變形 */
-  object-position: center;
-  z-index: 0;
-  filter: saturate(.9) contrast(1.05);
+  position:absolute;
+  inset:0;
+
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+
+  opacity:0;
+
+  transition:opacity .8s ease;
+
+  background:#111;
 }
 
-/* 讓花牆文字沿用 section 標題風格 */
-.flower-wall-inner{
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;   /* 左 */
-  justify-content: flex-end; /* 下 */
-
-  padding: clamp(32px, 6vw, 64px);
-}
-
-/* 直接套用 section-head 的視覺語言 */
-.flower-wall-kicker{
-  font-size: var(--kicker-size, .75rem);
-  letter-spacing: .32em;
-  opacity: .6;
-  margin-bottom: 6px;
-}
-
-.flower-wall-title{
-  font-size: var(--title-size, 1.25rem);
-  letter-spacing: .16em;
-  margin: 0;
-}
-
-
-/* 說明 */
-.flower-wall-sub{
-  font-size: .85rem;
-  opacity: .75;
-  letter-spacing: .08em;
-}
-
-/* 手機微調 */
-@media (max-width: 700px){
-  .flower-wall{
-    min-height: 34vh;
-  }
-}
-
-/* ===== Flower Wall Slideshow ===== */
-.flower-wall--slideshow{
-  position: relative;
-  min-height: 42vh;
-  margin: clamp(48px, 8vw, 96px) 0;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  background: #000;
-}
-
-.flower-wall--slideshow .flower-wall-img{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 1200ms ease; /* ⭐ 漸出漸入速度 */
-  filter: saturate(.92) contrast(1.04);
-  background: #000;
-}
-
-/* 目前顯示中的那張 */
-.flower-wall--slideshow .flower-wall-img.is-on{
-  opacity: 1;
-}
-
-
-
-/* 內容 */
-.flower-wall--slideshow{
-  position: relative;
-  min-height: 80vh;
-
-  /* ⭐ 關鍵：上下保留、左右置中 */
-  margin: clamp(48px, 8vw, 96px) auto;
-
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center; /* 水平置中內容 */
-  background: #000;
-}
-
-
-@media (max-width: 700px){
-  .flower-wall--slideshow{ min-height: 34vh; }
-}
-
-/* 無障礙：使用者偏好減少動態時，停用淡入淡出 */
-@media (prefers-reduced-motion: reduce){
-  .flower-wall--slideshow .flower-wall-img{ transition: none; }
+.flower-wall-img.is-on{
+  opacity:1;
 }
 /* ===== 5-image collage ===== */
 /* ===== Collage: lead + auto grid ===== */
@@ -1405,3 +1316,46 @@ main{ display:block; }
   }
 }
 
+.event-gallery{
+  columns:3;
+  column-gap:16px;
+}
+
+.event-gallery img{
+  width:100%;
+  margin-bottom:16px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:.3s;
+  display:block;
+}
+
+.event-gallery img:hover{
+  transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+  .event-gallery{
+    columns:2;
+  }
+}
+
+.event-box{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.event-box.show{
+  display:flex;
+}
+
+.event-box img{
+  max-width:90vw;
+  max-height:90vh;
+  border-radius:16px;
+}

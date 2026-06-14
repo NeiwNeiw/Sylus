@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Blessing For Your Birthday</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +65,7 @@
         <a href="#type">方案說明</a>
         <a href="#portfolio">狸來扭鴉</a>
         <a href="#lightbox" >燈箱資訊</a>
-         <a href="#ext" >敬請期待</a>
+         <a href="#ext" >活動當日場佈</a>
       </nav>
     </div>
   </header>
@@ -201,20 +202,18 @@
     </section>
 
     <!-- Flower Wall Slideshow -->
-      <section class="section" id="portfolio">
-      <div class="section-head">
-        <h3 class="section-kicker">活動現場花牆與展示架布置參考</h3>
-        <p class="section-sub">DECORATION PREVIEW</p>
-      </div>
-        <section class="section flower-wall flower-wall--slideshow" aria-label="花牆裝飾預覽">
-        <!-- 兩張疊在一起做 crossfade -->
-        <img class="flower-wall-img is-a" id="woolA" alt="花牆預覽" loading="lazy" decoding="async">
-        <img class="flower-wall-img is-b" id="woolB" alt="花牆預覽" loading="lazy" decoding="async">
-      </section>
-    </section>
+    <section class="section" id="decoration">
+	  <div class="section-head">
+		<h3 class="section-kicker">活動現場花牆與展示架布置參考</h3>
+		<p class="section-sub">DECORATION PREVIEW</p>
+	  </div>
+
+	  <div class="flower-wall flower-wall--slideshow">
+		<img class="flower-wall-img is-a" id="woolA" alt="花牆預覽">
+		<img class="flower-wall-img is-b" id="woolB" alt="花牆預覽">
+	  </div>
+	</section>
   
-       
-    </section>
    <section class="section collage-5" aria-label="五圖拼貼">
       <div class="section-head">
         <h3 class="section-kicker">活動餐食參考</h3>
@@ -350,7 +349,18 @@
         <img src="image/instructions.jpg" alt="入場須知" />
       </div>
     </section>
+	<section class="section" id="ext">
+	  <div class="section-head">
+		<h3 class="section-kicker">活動當日場佈</h3>
+		<p class="section-sub">EVENT MEMORIES</p>
+	  </div>
 
+	  <div id="eventGallery" class="event-gallery"></div>
+	</section>
+
+	<div id="eventBox" class="event-box">
+	  <img id="eventBoxImg" src="">
+	</div>
     <!-- lightbox -->
     <section class="section section-dark" id="lightbox">
 
@@ -933,82 +943,118 @@ window.addEventListener('keydown', e => {
 <script>
 (() => {
   // ✅ 把 wool 相簿裡的圖片檔名列在這（自行增減）
-  const WOOL_IMAGES = [
-    "image/wool/w01.jpg",
-    "image/wool/w02.jpg",
-    "image/wool/w03.jpg",
-    "image/wool/w04.jpg",
-    // ...你可以繼續加
-  ];
-
-  const INTERVAL = 4200; // 每張停留多久（ms）
-  const PRELOAD_NEXT = true;
+  const AUTO_WOOL_MAX = 999;
 
   const a = document.getElementById("woolA");
   const b = document.getElementById("woolB");
-  if (!a || !b || WOOL_IMAGES.length === 0) return;
+  if (!a || !b) return;
 
-  let i = 0;
-  let showA = true;
+  const images = [];
 
-  // 初始顯示第一張
-  a.src = WOOL_IMAGES[0];
-  a.classList.add("is-on");
-
-  // 預載下一張避免閃爍
-  const preload = (src) => {
-    if (!PRELOAD_NEXT) return;
+  const exists = (src) => new Promise(resolve => {
     const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
     img.src = src;
-  };
+  });
 
-  preload(WOOL_IMAGES[1 % WOOL_IMAGES.length]);
+  (async()=>{
+    let fail=0;
+    for(let i=1;i<=AUTO_WOOL_MAX;i++){
+      const src=`image/wool/${String(i).padStart(3,"0")}.jpg`;
+      if(await exists(src)){images.push(src);fail=0;}
+      else {fail++; if(fail>=20) break;}
+    }
 
-  // 偵測是否在可視範圍：不在畫面就不切，省效能
-  let canPlay = true;
-  const section = a.closest(".flower-wall--slideshow");
-  if (section && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      canPlay = entries.some(e => e.isIntersecting);
-    }, { threshold: 0.2 });
-    io.observe(section);
+    if(!images.length) return;
+
+    let index=0, showA=true;
+    a.src=images[0];
+    a.classList.add("is-on");
+
+    setInterval(()=>{
+      index=(index+1)%images.length;
+      const incoming=showA?b:a;
+      const outgoing=showA?a:b;
+
+      incoming.onload=()=>{
+        outgoing.classList.remove("is-on");
+        incoming.classList.add("is-on");
+      };
+      incoming.src=images[index];
+      showA=!showA;
+    },4200);
+  })();
+})();
+</script>
+<script>
+(() => {
+
+  const gallery = document.getElementById("eventGallery");
+  const box = document.getElementById("eventBox");
+  const boxImg = document.getElementById("eventBoxImg");
+
+  if (!gallery) return;
+
+  const MAX_IMAGES = 999;
+
+  let failCount = 0;
+  const MAX_FAIL = 30;
+
+  async function loadGallery() {
+
+    for (let i = 1; i <= MAX_IMAGES; i++) {
+
+      const fileName = String(i).padStart(3, "0");
+      const src = `event/${fileName}.jpg`;
+
+      const exists = await imageExists(src);
+
+      if (exists) {
+
+        failCount = 0;
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.loading = "lazy";
+
+        img.addEventListener("click", () => {
+          boxImg.src = src;
+          box.classList.add("show");
+        });
+
+        gallery.appendChild(img);
+
+      } else {
+
+        failCount++;
+
+        if (failCount >= MAX_FAIL) {
+          break;
+        }
+      }
+    }
   }
 
-  const tick = () => {
-    if (!canPlay) return;
+  function imageExists(src) {
+    return new Promise(resolve => {
 
-    i = (i + 1) % WOOL_IMAGES.length;
-    const nextSrc = WOOL_IMAGES[i];
-    const nextNextSrc = WOOL_IMAGES[(i + 1) % WOOL_IMAGES.length];
+      const img = new Image();
 
-    const incoming = showA ? b : a;
-    const outgoing = showA ? a : b;
+      img.onload = () => resolve(true);
 
-    // 先換 incoming 圖，再淡入
-    incoming.src = nextSrc;
+      img.onerror = () => resolve(false);
 
-    // 等圖片開始可用再切換（避免白屏閃一下）
-    const apply = () => {
-      outgoing.classList.remove("is-on");
-      incoming.classList.add("is-on");
-      showA = !showA;
-      preload(nextNextSrc);
-      incoming.removeEventListener("load", apply);
-    };
+      img.src = src;
+    });
+  }
 
-    // 如果已快取完成，load 可能不觸發，直接套用
-    if (incoming.complete) apply();
-    else incoming.addEventListener("load", apply);
-  };
-
-  const timer = setInterval(tick, INTERVAL);
-
-  // 分頁切走暫停，回來再繼續（省資源）
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) return;
-    // 回來時預載下一張
-    preload(WOOL_IMAGES[(i + 1) % WOOL_IMAGES.length]);
+  box.addEventListener("click", () => {
+    box.classList.remove("show");
   });
+
+  loadGallery();
+
 })();
 </script>
 
