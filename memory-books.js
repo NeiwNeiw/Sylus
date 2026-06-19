@@ -35,7 +35,7 @@ const BOOKS = {
       code: "seasonsv77wtufd"
     },
     {
-      image: "image/menu/seasons8kte9vo5s.png",
+      image: "menu/seasons8kte9vo5s.png",
       type: "video",
       code: "seasons8kte9vo5s"
     },
