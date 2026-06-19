@@ -31,12 +31,12 @@
     <div class="card" role="dialog" aria-modal="true" aria-label="Invitation">
       <div class="kicker">MY DEAR KITTEN ,YOU ARE INVITED</div>
       <h1>浮生徹語.靈魂相契<br><small>秦徹生日應援茶會</small></h1>
-
+	<!--
       <div class="meta" aria-label="Event meta">
         <div><b>DATE</b><span>04 / 18</span></div><p>
         <div><b>LOCATION</b><span>高雄市苓雅區青年二路238號</span></div>
-      </div>
-      <p><b class="sub">點擊封蠟，打開邀請函</b></p>
+      </div>-->
+      <p><b class="sub">獻給生賀組的所有工作人員以此紀念</b></p>
       <!-- Seal (image/invite.png) -->
       <button class="seal" id="openInvite" type="button" aria-label="Open invitation">
         <img class="seal-img" src="image/invite.png" alt="封蠟" decoding="async" />
@@ -109,7 +109,7 @@
         <div class="panel">
           <h3>重點資訊</h3>
           <ul>
-            <li><b>日期</b>：04/18</li>
+            <li><b>日期</b>：2026/04/18</li>
             <li><b>地點</b>：高雄市苓雅區青年二路238號</li>
             <li><b>注意事項</b>：🚫禁止COS任何一位男主</li>
           </ul>
@@ -145,9 +145,9 @@
           <div class="gift-picks" aria-label="參加禮品項">
             <button class="gift-pill" type="button" data-img="image/gift/g05.jpg">四季票根 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g11.jpg">小零錢包 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g09.jpg">桌曆 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g10.jpg">同人文 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g08.jpg">色色明信片 👑</button>
 
             <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
@@ -164,9 +164,9 @@
           <div class="gift-picks" aria-label="參加禮品項">
             <button class="gift-pill" type="button" data-img="image/gift/g06.jpg">春夏票根</button>
             <button class="gift-pill" type="button" data-img="image/gift/g04.jpg">卡冊 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">小零錢包 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g11.jpg">小零錢包 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g09.jpg">桌曆 👑</button>
-            <button class="gift-pill" type="button" data-img="image/gift/soon.jpg">同人文 👑</button>
+            <button class="gift-pill" type="button" data-img="image/gift/g10.jpg">同人文 👑</button>
             <button class="gift-pill" type="button" data-img="image/gift/g08.jpg">色色明信片 👑</button>
 
             <button class="gift-pill" type="button" data-img="image/gift/g02.jpg">票夾</button>
@@ -352,6 +352,33 @@
 	  <img id="eventBoxImg" src="">
 	</div>
 	
+	<section id="memoryBooks" class="section">
+
+	  <div class="book-grid">
+		<h3 class="section-kicker">NFC 相簿</h3>
+		<button class="book-card"
+				onclick="openBook('daily')">
+		  <img src="image/menu/daily.png">
+		</button>
+
+		<button class="book-card"
+				onclick="openBook('seasons')">
+		  <img src="image/menu/seasons.png">
+		</button>
+
+		<button class="book-card"
+				onclick="openBook('sex')">
+		  <img src="image/menu/sex.png">
+		</button>
+
+		<button class="book-card"
+				onclick="openBook('sun')">
+		  <img src="image/menu/sun.png">
+		</button>
+
+	  </div>
+
+	</section>
 	
     <!-- instructions -->
     <section class="section section-dark" id="instructions" aria-label="入場須知">
@@ -450,9 +477,10 @@
 
   <!-- Side countdown badge -->
   <a class="countdown-badge" id="countdownBadge" href="#top" aria-label="Countdown to event">
-    <span class="cd-num" id="cdNum">--</span>
+    <!--<span class="cd-num" id="cdNum">--</span>
     <span class="cd-label">DAYS</span>
-    <span class="cd-date">04/18</span>
+    <span class="cd-date">04/18</span>-->
+	<span class="cd-label">Wrapped Up</span>
   </a>
 <script>
 (() => {
@@ -1059,6 +1087,53 @@ window.addEventListener('keydown', e => {
 
 })();
 </script>
+<div id="bookViewer" class="book-viewer">
 
+  <button
+    class="book-close"
+    onclick="closeBook()">
+
+    ×
+
+  </button>
+
+  <button
+    class="book-nav left"
+    onclick="prevPage()">
+
+    ‹
+
+  </button>
+
+  <div class="book-content">
+
+
+      <div class="book-image-container">
+  <img id="bookPage">
+
+  <a id="bookLink" class="page-play-btn" target="_blank">
+    ▶
+  </a>
+</div>
+	
+    </a>
+
+    <div
+      id="bookPageNum">
+    </div>
+
+  </div>
+
+  <button
+    class="book-nav right"
+    onclick="nextPage()">
+
+    ›
+
+  </button>
+
+</div>
+
+<script src="memory-books.js"></script>
 </body>
 </html>

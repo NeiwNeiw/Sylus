@@ -4,6 +4,7 @@
 ============================= */
 :root{
   --fs-base: 14px;
+  --fs-scale: 1;
   --fs-small: 13px;
   --fs-h1: clamp(40px, 6.5vw, 78px);
   --fs-h2: 16px;
@@ -467,40 +468,6 @@ main{ display:block; }
 }
 
 /* =============================
-   PARALLAX BAND
-============================= */
-.parallax-band{
-  position:relative;
-  overflow:hidden;
-  border-top: 1px solid rgba(255,255,255,.06);
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  background: rgba(0,0,0,.28);
-}
-.parallax-band .bg{
-  position:absolute;
-  inset: -8% 0 -8% 0;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.78) 80%),
-    url('image/sylus.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 65%;
-  transform: translate3d(0, calc(var(--parY) * .12), 0) scale(1.05);
-  will-change: transform;
-  filter: saturate(.92) contrast(1.06);
-}
-.parallax-band .content{
-  position:relative;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 80px clamp(16px, 3vw, 28px);
-  text-align:center;
-}
-.parallax-band h3{ margin:0; letter-spacing:.20em; text-transform: uppercase; font-size: clamp(18px, 3.2vw, 28px); }
-.parallax-band p{ margin: 10px auto 0; max-width: 72ch; color: rgba(242,242,244,.78); font-size: var(--fs-base); }
-
-/* =============================
    ABOUT / MAP / IG
 ============================= */
 .about-grid{ display:grid; grid-template-columns: repeat(auto-fit,
@@ -514,17 +481,6 @@ main{ display:block; }
   overflow:hidden;
 }
 .map-embed iframe{ width:100%; height:100%; border:0; display:block; }
-.ig-row{ margin-top: 14px; display:flex; justify-content:center; }
-.ig-link{
-  display:inline-flex;
-  gap: 10px;
-  align-items:center;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.18);
-}
-.ig-icon{ width: 18px; height: 18px; fill: rgba(242,242,244,.88); }
 
 @media (max-width: 980px){
   .about-grid, .map-grid{ grid-template-columns: 1fr; }
@@ -552,37 +508,6 @@ main{ display:block; }
 .cd-label{ display:block; font-size: 11px; letter-spacing:.18em; opacity:.85; }
 .cd-date{ display:block; font-size: 11px; letter-spacing:.12em; opacity:.75; margin-top: 2px; }
 
-/* =============================
-   LIGHTBOX
-============================= */
-.lightbox{ position: fixed; inset:0; z-index: 180; display:none; }
-.lightbox.open{ display:block; }
-.lightbox-backdrop{ position:absolute; inset:0; background: rgba(0,0,0,.72); backdrop-filter: blur(6px); }
-.lightbox-card{
-  position:relative;
-  max-width: min(92vw, 980px);
-  margin: 6vh auto 0;
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(10,10,14,.72);
-  box-shadow: 0 30px 100px rgba(0,0,0,.70);
-  overflow:hidden;
-}
-.lightbox-close{
-  position:absolute;
-  top: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.25);
-  color: var(--text);
-  cursor:pointer;
-}
-.lightbox-img{ width:100%; height: auto; max-height: 72vh; object-fit: contain; display:block; background: rgba(0,0,0,.25); }
-.lightbox-note{ margin: 0; padding: 12px 14px 14px; color: rgba(242,242,244,.86); font-size: var(--fs-base); }
-
 @media (prefers-reduced-motion: reduce){
   .shot img{ transition:none; }
   .hero-bg, .parallax-band .bg{ transform:none !important; }
@@ -601,8 +526,6 @@ main{ display:block; }
 
   /* 視覺一致性 */
   border-radius: 12px;
-}
-.instructions-image img{
   box-shadow: 0 30px 80px rgba(0,0,0,.6);
 }
 /* ===== IG Contact ===== */
@@ -646,68 +569,6 @@ main{ display:block; }
   opacity: .7;
   letter-spacing: .12em;
 }
-
-/* ===== Lightbox Grid ===== */
-.lightbox-grid{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 16px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.lightbox-grid img{
-  width: 100%;
-  display: block;
-  cursor: pointer;
-  border-radius: 12px;
-  transition: transform .25s ease;
-}
-
-.lightbox-grid img:hover{
-  transform: scale(1.02);
-}
-
-/* ===== Lightbox Overlay ===== */
-.lightbox{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-
-.lightbox.show{
-  display: flex;
-}
-
-.lb-img{
-  max-width: 90vw;
-  max-height: 85vh;
-  border-radius: 12px;
-}
-
-/* buttons */
-.lb-btn{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 48px;
-  cursor: pointer;
-  padding: 12px;
-  user-select: none;
-}
-
-.lb-btn.prev{ left: 24px; }
-.lb-btn.next{ right: 24px; }
-
 
 /* ===== Two Images Lightbox ===== */
 .lightbox-row{
@@ -777,17 +638,29 @@ main{ display:block; }
   }
 }
 
-/* 強制縮小 IG / Threads icon */
+.ig-contact{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  padding:48px 16px 64px;
+}
+
 .ig-link{
-  width: 100px;
-  height: 100px;
+  width:72px;
+  height:72px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
 }
 
 .ig-link img{
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
 }
 /* Portfolio Lightbox */
 .pbox{
@@ -965,180 +838,6 @@ main{ display:block; }
 @media (max-width: 600px){
   .album{ padding: 10px 16px 0; }
   .album-nav{ display:none; } /* 手機用滑動即可 */
-}
-/* ===== Join Gifts Collage ===== */
-.gift-collage{
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 0 16px;
-
-  display: grid;
-  gap: 12px;
-
-  /* 拼貼格局：6 格，讓每張圖大小不一 */
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 72px; /* 控制整體小一點：調 64~90 */
-}
-
-/* 每張卡片 */
-.gift{
-  margin: 0;
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  box-shadow: var(--shadow);
-}
-
-.gift .shotBtn{
-  all: unset;
-  display: block;
-  width: 100%;
-  height: 100%;
-  cursor: zoom-in;
-}
-
-.gift img{
-  width: 100%;
-  height: 100%;
-  display: block;
-
-  object-fit: contain;          /* ✅ 不裁切、不變形，按比例縮放 */
-  object-position: center;
-
-  background: rgba(0,0,0,.25);  /* ✅ 空白處用暗底補齊 */
-}
-
-
-.gift:hover img{ transform: scale(1.08); }
-
-/* 拼貼位置（你可以微調） */
-.g1{ grid-column: 1 / 7;  grid-row: 1 / 5; }  /* 大圖 */
-.g2{ grid-column: 7 / 10; grid-row: 1 / 3; }
-.g3{ grid-column: 10 / 13;grid-row: 1 / 4; }
-.g4{ grid-column: 7 / 10; grid-row: 3 / 5; }
-.g5{ grid-column: 10 / 13;  grid-row: 3 / 5; }
-.g6{ grid-column: 5 / 13; grid-row: 5 / 7; }
-
-/* RWD：手機改成兩欄卡片，仍有拼貼節奏 */
-@media (max-width: 700px){
-  .gift-collage{
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 140px;
-  }
-  .g1,.g2,.g3,.g4,.g5,.g6{
-    grid-column: auto;
-    grid-row: auto;
-  }
-  .g1{ grid-column: 1 / -1; grid-auto-rows: 180px; }
-}
-/* ===== Join Gifts Lightbox (isolated) ===== */
-.gbox{
-  position: fixed;
-  inset: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,.86);
-  z-index: 140; /* 比你原本的 overlay 高一點 */
-}
-
-.gbox.show{ display:flex; }
-
-.gbox-card{
-  margin: 0;
-  max-width: min(760px, 92vw);
-  text-align: center;
-}
-
-.gbox-card img{
-  width: 100%;
-  max-height: 78vh;
-  object-fit: contain;
-  display: block;
-  border-radius: 12px;
-}
-
-#gboxNote{
-  margin-top: 10px;
-  font-size: calc(.85rem * var(--fs-scale));
-  opacity: .85;
-  letter-spacing: .06em;
-}
-
-.gbox-btn{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 0;
-  background: none;
-  color: #fff;
-  font-size: 44px;
-  cursor: pointer;
-  padding: 10px 14px;
-  user-select: none;
-}
-
-.gbox-btn.prev{ left: 16px; }
-.gbox-btn.next{ right: 16px; }
-
-@media (max-width: 600px){
-  .gbox-btn{ font-size: 36px; }
-}
-.zen-kurenaido-regular {
-  font-family: "Zen Kurenaido", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.uoqmunthenkhung-regular {
-  font-family: "UoqMunThenKhung", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-/* ===== join-gifts collage: keep >= 4:3 ===== */
-#joinGiftsCollage{
-  grid-auto-rows: 1fr; /* 讓高度由 aspect-ratio 決定 */
-}
-
-/* 每個格子至少 4:3，不允許太細長 */
-#joinGiftsCollage .gift{
-  aspect-ratio: 4 / 3;
-}
-
-/* 大圖就放大比例（仍維持不細長） */
-#joinGiftsCollage .gift.g1{
-  aspect-ratio: 4/3; /* 你也可改 4/3 或 16/10 */
-}
-
-/* 圖片維持比例，不變形 */
-#joinGiftsCollage .gift img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* 保留比例，必要時裁切 */
-  object-position: center;
-  display: block;
-}
-/* ===== join-gifts collage dark base ===== */
-#joinGiftsCollage .gift{
-  background: #000;                 /* 拼貼底圖改黑 */
-}
-
-/* button 本身也清成透明，避免白底 */
-#joinGiftsCollage .giftBtn{
-  background: transparent;
-}
-
-/* 若圖片比例不足時，避免露白 */
-#joinGiftsCollage .gift img{
-  background: #000;
-}
-
-/* 若有 placeholder（之後你又用回敬請期待） */
-#joinGiftsCollage .shot-placeholder{
-  background: #000;
-  color: rgba(255,255,255,.6);
 }
 /* ===== Gift item buttons ===== */
 .gift-picks{
@@ -1358,4 +1057,137 @@ main{ display:block; }
   max-width:90vw;
   max-height:90vh;
   border-radius:16px;
+}
+
+/* ===== NFC Memory Books ===== */
+.book-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+  align-items:start;
+}
+
+.book-card{
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:#fff;
+}
+
+.book-card img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+
+.book-card span{
+  display:block;
+  margin-top:10px;
+  text-align:center;
+}
+
+.book-viewer{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.book-viewer.show{
+  display:flex;
+}
+
+.book-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+}
+
+.book-image-container{
+  position:relative;
+  display:inline-block;
+  max-width:80vw;
+  max-height:80vh;
+}
+
+#bookPage{
+  display:block;
+  max-width:80vw;
+  max-height:80vh;
+  border-radius:12px;
+}
+
+.book-page-num,
+#bookPageNum{
+  color:#fff;
+  opacity:.8;
+  font-size:14px;
+}
+
+.book-nav{
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:60px;
+  cursor:pointer;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:1;
+}
+
+.book-nav.left{ left:24px; }
+.book-nav.right{ right:24px; }
+
+.book-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:none;
+  border:none;
+  color:white;
+  font-size:40px;
+  cursor:pointer;
+  z-index:2;
+}
+
+.page-play-btn{
+  position:absolute;
+  right:16px;
+  bottom:16px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:rgba(255,255,255,.2);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.3);
+  color:#fff;
+  font-size:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+.page-play-btn:hover{
+  transform:scale(1.06);
+}
+
+@media (max-width: 600px){
+  .book-grid{ grid-template-columns:repeat(2,1fr); }
+  .book-nav{ font-size:42px; }
+  .book-nav.left{ left:8px; }
+  .book-nav.right{ right:8px; }
+  .page-play-btn{
+    width:46px;
+    height:46px;
+    right:12px;
+    bottom:12px;
+    font-size:20px;
+  }
 }
