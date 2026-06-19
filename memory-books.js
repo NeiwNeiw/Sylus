@@ -2,7 +2,7 @@ const BOOKS = {
 
   daily: [
     {
-      image: "menu/daily69fug8w4d.png",
+      image: "menu/daily69fug8w4d.PNG",
       type: "video",
       code: "daily69fug8w4d"
     },
@@ -12,12 +12,12 @@ const BOOKS = {
       code: "dailyrX3c3zRX"
     },
     {
-      image: "menu/dailyi6lqoap3c.png",
+      image: "menu/dailyi6lqoap3c.PNG",
       type: "audio",
       code: "dailyi6lqoap3c"
     },
     {
-      image: "menu/dailyekqx9tokk.png",
+      image: "menu/dailyekqx9tokk.PNG",
       type: "audio",
       code: "dailyekqx9tokk"
     }
