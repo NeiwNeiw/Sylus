@@ -2,22 +2,22 @@ const BOOKS = {
 
   daily: [
     {
-      image: "menu/daily69fug8w4d.PNG",
+      image: "image/menu/daily69fug8w4d.png",
       type: "video",
       code: "daily69fug8w4d"
     },
     {
-      image: "menu/dailyrX3c3zRX.png",
+      image: "image/menu/dailyrX3c3zRX.png",
       type: "audio",
       code: "dailyrX3c3zRX"
     },
     {
-      image: "menu/dailyi6lqoap3c.PNG",
+      image: "image/menu/dailyi6lqoap3c.png",
       type: "audio",
       code: "dailyi6lqoap3c"
     },
     {
-      image: "menu/dailyekqx9tokk.PNG",
+      image: "image/menu/dailyekqx9tokk.png",
       type: "audio",
       code: "dailyekqx9tokk"
     }
@@ -25,22 +25,22 @@ const BOOKS = {
 
   seasons: [
     {
-      image: "menu/seasonsq49payqh.png",
+      image: "image/menu/seasonsq49payqh.png",
       type: "video",
       code: "seasonsq49payqh"
     },
     {
-      image: "menu/seasonsv77wtufd.png",
+      image: "image/menu/seasonsv77wtufd.png",
       type: "video",
       code: "seasonsv77wtufd"
     },
     {
-      image: "menu/seasons8kte9vo5s.png",
+      image: "image/menu/seasons8kte9vo5s.png",
       type: "video",
       code: "seasons8kte9vo5s"
     },
     {
-      image: "menu/seasonsjantxwh7y.png",
+      image: "image/menu/seasonsjantxwh7y.png",
       type: "video",
       code: "seasonsjantxwh7y"
     }
@@ -48,27 +48,27 @@ const BOOKS = {
 
   sex: [
     {
-      image: "menu/sexr47ekwrt1w6i.jpg",
+      image: "image/menu/sexr47ekwrt1w6i.jpg",
       type: "video",
       code: "sexr47ekwrt1w6i"
     },
     {
-      image: "menu/sexkc7psg7ifwtk.jpg",
+      image: "image/menu/sexkc7psg7ifwtk.jpg",
       type: "video",
       code: "sexkc7psg7ifwtk"
     },
     {
-      image: "menu/sexpxeo23h8bnee.jpeg",
+      image: "image/menu/sexpxeo23h8bnee.jpeg",
       type: "video",
       code: "sexpxeo23h8bnee"
     },
     {
-      image: "menu/sexmitdi5ys31gx.png",
+      image: "image/menu/sexmitdi5ys31gx.png",
       type: "audio",
       code: "sexmitdi5ys31gx"
     },
     {
-      image: "menu/sexykdpo8nuvinb.png",
+      image: "image/menu/sexykdpo8nuvinb.png",
       type: "audio",
       code: "sexykdpo8nuvinb"
     }
@@ -76,22 +76,22 @@ const BOOKS = {
 
   sun: [
     {
-      image: "menu/sun5vatyqbddro0.png",
+      image: "image/menu/sun5vatyqbddro0.png",
       type: "audio",
       code: "sun5vatyqbddro0"
     },
     {
-      image: "menu/sun3n4p9kx2yap6.png",
+      image: "image/menu/sun3n4p9kx2yap6.png",
       type: "audio",
       code: "sun3n4p9kx2yap6"
     },
     {
-      image: "menu/sunxdqcteglzi2o.png",
+      image: "image/menu/sunxdqcteglzi2o.png",
       type: "audio",
       code: "sunxdqcteglzi2o"
     },
     {
-      image: "menu/sunc892p8reyk8q.png",
+      image: "image/menu/sunc892p8reyk8q.png",
       type: "audio",
       code: "sunc892p8reyk8q"
     }
